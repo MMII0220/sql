@@ -5,3 +5,8 @@ GROUP BY person_name
 ORDER BY count_of_visits DESC,
     person.name ASC
 LIMIT 4;
+
+-- SELECT * from menu;
+-- SELECT * from person;
+-- SELECT * from person_order;
+-- SELECT * from person_visits;

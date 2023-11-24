@@ -8,7 +8,7 @@ SELECT SUM(rating) FROM pizzeria;
 
 -- Сессия 2 
 UPDATE pizzeria SET rating = 5 WHERE name = 'Pizza Hut';
-COMMIT; 
+COMMIT;
 
 -- Сессия 1
 SELECT SUM(rating) FROM pizzeria;

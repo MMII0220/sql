@@ -1,4 +1,11 @@
-SELECT DISTINCT person.name AS name FROM person_order
-JOIN person ON person_order.person_id = person.id
-ORDER BY name;
+SELECT DISTINCT p.name as name
+FROM person_visits pv
+JOIN person p on p.id = pv.person_id
+ORDER BY 1;
+
+
+-- SELECT * from menu;
+-- SELECT * from person;
+-- SELECT * from person_order;
+-- SELECT * from person_visits;
 

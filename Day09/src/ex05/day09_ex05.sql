@@ -18,3 +18,6 @@ FROM fnc_persons(pgender := 'male');
 
 SELECT *
 FROM fnc_persons();
+
+-- drop FUNCTION fnc_persons_male();
+-- drop FUNCTION fnc_persons_female();

@@ -1,8 +1,6 @@
-SELECT pizzeria.name
-FROM pizzeria
-         JOIN person_visits ON pizzeria_id = pizzeria.id
-         JOIN person ON person_id = person.id
-         JOIN menu ON menu.pizzeria_id = pizzeria.id
-WHERE person.name = 'Dmitriy'
-  AND visit_date = '2022.01.08'
-  AND price < 800;
+select pz.name as pizza_name
+from person p
+join person_visits pv on p.id = pv.person_id
+join pizzeria pz on pz.id = pv.pizzeria_id
+join menu m on m.pizzeria_id = pv.pizzeria_id
+where m.price < 800 and pv.visit_date = '2022-01-08' and p.name = 'Dmitriy';

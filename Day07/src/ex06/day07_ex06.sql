@@ -1,10 +1,17 @@
-SELECT pizzeria.name AS name,
-    COUNT(person_order.id) AS count_of_orders,
-    ROUND(AVG(menu.price)) AS average_price,
-    MAX(menu.price) AS max_price,
-    MIN(menu.price) AS min_price
-FROM person_order
-JOIN menu ON person_order.menu_id = menu.id
-JOIN pizzeria ON menu.pizzeria_id = pizzeria.id
-GROUP BY name
-ORDER BY name;
+SELECT pz.name as name, 
+       count(po.order_date) as count_of_orders, 
+       ROUND(avg(m.price)) as average_price, 
+       max(m.price) as max_price, 
+       min(m.price) as min_price
+FROM person_order po
+JOIN person p on p.id = po.person_id
+JOIN menu m on m.id = po.menu_id
+JOIN pizzeria pz on pz.id = m.pizzeria_id
+GROUP BY pz.name
+order BY name;
+
+-- SELECT * from menu;
+-- SELECT * from person;
+-- SELECT * from person_order;
+-- SELECT * from person_visits;
+-- SELECT * FROM pizzeria;

@@ -19,7 +19,6 @@ BEGIN
     OLD.gender,
     OLD.address    
   );
-  
   RETURN OLD;
 END; 
 $$ LANGUAGE plpgsql;
@@ -30,3 +29,7 @@ CREATE TRIGGER trg_person_delete_audit
   EXECUTE PROCEDURE fnc_trg_person_delete_audit();
   
 DELETE FROM person WHERE id = 10;
+DELETE FROM person_audit WHERE row_id = 10;
+
+-- SELECT * from person_audit;
+-- SELECT * from person;

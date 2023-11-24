@@ -25,3 +25,5 @@ SELECT * FROM pizzeria WHERE name = 'Pizza Hut';
 
 -- Сессия 2 
 SELECT * FROM pizzeria WHERE name = 'Pizza Hut';
+
+-- show TRANSACTION ISOLATION level;

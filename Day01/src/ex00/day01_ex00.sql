@@ -1,4 +1,5 @@
-SELECT id AS object_id, pizza_name AS object_name FROM menu
+select id as object_id, name as object_name from person
 UNION
-SELECT id, name FROM person
-ORDER BY object_id, object_name;
+select id as object_id, pizza_name as object_name from menu
+order by object_id, object_name;
+

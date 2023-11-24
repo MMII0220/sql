@@ -1,12 +1,7 @@
-WITH female AS (SELECT person.name, pizza_name FROM person
-JOIN person_order ON person_id = person.id
-JOIN menu ON menu_id = menu.id
-WHERE person.gender = 'female')
-SELECT female.name AS name
-FROM female 
-WHERE pizza_name = 'pepperoni pizza' 
-INTERSECT
-SELECT female.name AS name
-FROM female  
-WHERE pizza_name = 'cheese pizza'
-ORDER BY 1;
+select p.name from person p
+join person_order po on p.id = po.person_id
+join menu m ON m.id = po.menu_id
+WHERE m.pizza_name in ('pepperoni pizza', 'cheese pizza')
+and p.gender = 'female'
+GROUP BY p.name
+HAVING count(m.pizza_name) > 1;

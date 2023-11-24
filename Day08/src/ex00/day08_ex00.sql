@@ -6,3 +6,9 @@ SELECT * FROM pizzeria WHERE name = 'Pizza Hut';
 COMMIT; 
 -- Сессия 2
 SELECT * FROM pizzeria WHERE name = 'Pizza Hut'; 
+
+-- SELECT * from person;
+-- SELECT * from person_order;
+-- SELECT * from person_visits;
+-- SELECT * from pizzeria;
+-- SELECT * from menu;

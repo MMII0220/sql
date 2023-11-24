@@ -1,3 +1,5 @@
-SELECT name, rating FROM pizzeria
-LEFT JOIN person_visits ON pizzeria.id = pizzeria_id
-WHERE pizzeria_id IS NULL;
+select p.name, p.rating 
+from pizzeria p 
+LEFT join person_visits pv on pv.pizzeria_id = p.id
+where pv.pizzeria_id is NULL;
+

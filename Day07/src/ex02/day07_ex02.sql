@@ -14,3 +14,7 @@ LEFT JOIN pizzeria ON pizzeria.id = pizzeria_order_count.pizzeria_id
 ORDER BY count DESC
 LIMIT 3)
 ORDER BY action_type ASC, count DESC;
+
+SELECT * FROM pizzeria;
+SELECT * FROM person_order;
+SELECT * FROM person_visits;

@@ -16,4 +16,3 @@ $$ LANGUAGE plpgsql;
 
 select * from fnc_fibonacci(100);
 select * from fnc_fibonacci();
-

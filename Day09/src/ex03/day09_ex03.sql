@@ -15,7 +15,7 @@ BEGIN
     INSERT INTO person_audit (created, type_event, row_id, name, age, gender, address)
     VALUES (now(), 'D', OLD.id, OLD.name, OLD.age, OLD.gender, OLD.address);
     RETURN OLD;
-    
+
   END IF;
 END;
 $$ LANGUAGE plpgsql;
@@ -40,3 +40,7 @@ UPDATE person SET name = 'Bulat' WHERE id = 10;
 UPDATE person SET name = 'Damir' WHERE id = 10;
 
 DELETE FROM person WHERE id = 10;
+DELETE FROM person_audit where row_id = 10;
+
+SELECT * FROM person;
+SELECT * from person_audit;

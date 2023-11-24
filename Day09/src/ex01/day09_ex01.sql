@@ -13,13 +13,8 @@ BEGIN
   ) VALUES (
     now(),
     'U',
-    OLD.id,
-    OLD.name,
-    OLD.age,
-    OLD.gender, 
-    OLD.address
+    OLD.*
   );
-
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
@@ -31,3 +26,8 @@ CREATE TRIGGER trg_person_update_audit
 
 UPDATE person SET name = 'Bulat' WHERE id = 10;
 UPDATE person SET name = 'Damir' WHERE id = 10;
+
+-- DELETE FROM person_audit WHERE row_id = 10;
+
+-- SELECT * from person_audit;
+-- SELECT * from person;
